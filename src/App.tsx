@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import About from "./components/About/About";
-import Admin from "./components/Admin/Admin";
+import Admin from "./components/Admin/AdminForm";
 import Contacts from "./components/Contacts/Contacts";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Flights from "./components/Flights/Flights";
@@ -15,9 +15,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Nav />}>
-          <Route path="/" element={<MainPage />}>
-            
-          </Route>
+          <Route path="/" element={<MainPage />} />
           <Route path="/tech" element={<Technologies />} />
           <Route path="/flights" element={<Flights />} />
           <Route path="/guarantees" element={<Guarantees />} />

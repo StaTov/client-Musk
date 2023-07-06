@@ -1,38 +1,18 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+import AdminConfig from "./AdminConfig";
+import AdminForm from "./AdminForm";
 
 
 const Admin = () => {
-    const [email, setEmail] = useState<string>('')
-    const [password, setPassword] = useState<string>('')
-
-    const handleAdmin = (e: React.SyntheticEvent) => {
-        e.preventDefault()
-
-    }
-
+    const admin = useSelector((state: RootState) => state.admin.value)
     return (
         <div>
-            <form onSubmit={handleAdmin}>
-                <div>
-                    <input
-                        placeholder="enter email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}>
-                    </input>
-                </div>
-                <div>
-                    <input
-                        placeholder="enter password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}>
-                    </input>
-                </div>
-                <div>
-                    <button type="submit">
-                        sumbit
-                    </button>
-                </div>
-            </form>
+            {
+                admin
+                    ? <AdminConfig />
+                    : <AdminForm />
+            }
         </div>
     )
 }
