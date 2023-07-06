@@ -23,7 +23,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
         </Route>
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/secret/admin" element={<Admin />} />
       </Routes>
     </div>
   );

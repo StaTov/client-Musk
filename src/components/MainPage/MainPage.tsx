@@ -1,8 +1,11 @@
+import Benefits from "../Benefits/Benefits";
 
 const MainPage = () => {
     return (
         <div>
-            Main
+            <div>
+                <Benefits/>
+            </div>
         </div>
     )
 }
