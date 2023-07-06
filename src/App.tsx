@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import About from "./components/About/About";
+import Admin from "./components/Admin/Admin";
 import Contacts from "./components/Contacts/Contacts";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Flights from "./components/Flights/Flights";
@@ -14,14 +15,17 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Nav />}>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<MainPage />}>
+            
+          </Route>
           <Route path="/tech" element={<Technologies />} />
           <Route path="/flights" element={<Flights />} />
           <Route path="/guarantees" element={<Guarantees />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
         </Route>
-        <Route path="*" element={<ErrorPage/>}/>
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );
