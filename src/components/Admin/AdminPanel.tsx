@@ -1,5 +1,5 @@
 
-const AdminConfig = () => {
+const AdminPanel = () => {
     return (
         <div>
             Config
@@ -7,4 +7,4 @@ const AdminConfig = () => {
     )
 }
 
-export default AdminConfig;
+export default AdminPanel;

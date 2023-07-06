@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import About from "./components/About/About";
-import Admin from "./components/Admin/AdminForm";
+import Admin from "./components/Admin/Admin";
 import Contacts from "./components/Contacts/Contacts";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Flights from "./components/Flights/Flights";

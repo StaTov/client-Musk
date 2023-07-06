@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 
-const Admin = () => {
+const AdminForm = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
     const handleAdmin = (e: React.SyntheticEvent) => {
         e.preventDefault()
     }
-    
+
     return (
         <div>
             <form onSubmit={handleAdmin}>
@@ -36,4 +36,4 @@ const Admin = () => {
     )
 }
 
-export default Admin;
+export default AdminForm;
