@@ -1,18 +1,25 @@
+import { Grid, Paper, Typography } from "@mui/material";
 import { BenefitsValue } from "../../features/redusers/BenefitsBlockSlice";
 
+
+
 interface Props {
-    value: BenefitsValue
+    data: BenefitsValue
 }
 
-const Item = ({ value }: Props) => {
+const BenefitsItem: React.FC<Props> = ({ data }: Props) => {
     return (
-        <div>
-            <div>{value.stringOne}</div>
-            <div>{value.number}</div>
-            <div>{value.stringTwo}</div>
-        </div>
+
+        <Grid item xs={6}>
+            <Paper sx={{ width: '12vw', height: '12vw', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} elevation={1} >
+                <Typography sx={{ fontSize: '1.2vw' }}>{data.stringOne}</Typography>
+                <Typography sx={{ fontSize: '3vw' }}>{data.number}</Typography>
+                <Typography sx={{ fontSize: '1.2vw' }}>{data.stringTwo}</Typography>
+
+            </Paper>
+        </Grid >
 
     )
 };
 
-export default Item;
+export default BenefitsItem;

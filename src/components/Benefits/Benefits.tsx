@@ -12,7 +12,7 @@ const Benefits = () => {
     }
     return (
         <div>
-            {benefits.map(b => <BenefitsItem value={b} key={b.id}/>)}
+            {benefits.map(b => <BenefitsItem data={b} key={b._id}/>)}
         </div>
     )
 }

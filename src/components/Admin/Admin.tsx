@@ -9,7 +9,7 @@ const Admin = () => {
 
     return (
         <div>
-            {admin
+            {!admin
                 ? <AdminConfig />
                 : <AdminForm />}
         </div>

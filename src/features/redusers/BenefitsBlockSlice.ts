@@ -5,7 +5,7 @@ import { RootState } from '../../store';
 
 
 export interface BenefitsValue {
-    id: string,
+    _id: string,
     stringOne: string;
     stringTwo: string;
     number: number;
