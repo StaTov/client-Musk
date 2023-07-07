@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux"
+import { useAppSelector } from "../../hooks"
 import { RootState } from "../../store"
 import BenefitsItem from "./BenefitsItem"
 
 
 const Benefits = () => {
 
-    const benefits = useSelector((state: RootState) => state.benefits.value)
+    const benefits = useAppSelector((state: RootState) => state.benefits)
 
     if (!benefits) {
         return null

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router";
 import About from "./components/About/About";
 import Admin from "./components/Admin/Admin";
@@ -8,9 +9,18 @@ import Guarantees from "./components/Guarantees/Guarantees";
 import MainPage from "./components/MainPage/MainPage";
 import Nav from "./components/Nav/Nav";
 import Technologies from "./components/Technologies/Texhnologies";
+import { initializeBenefits } from "./features/redusers/BenefitsBlockSlice";
+import { useAppDispatch } from "./hooks";
 
 
 function App() {
+ 
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(initializeBenefits())
+  }, [dispatch])
+
   return (
     <div className="App">
       <Routes>

@@ -1,5 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { Action, createSlice, ThunkAction } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import benefitsService from '../../services/benefitsService';
+import { RootState } from '../../store';
+
 
 export interface BenefitsValue {
     id: string,
@@ -8,29 +11,28 @@ export interface BenefitsValue {
     number: number;
 }
 
-export interface BenefitsBlock {
-    value: BenefitsValue[]
-}
 
-const initialState: BenefitsBlock = {
-    value: [{
-        id: '123',
-        stringOne: 'Мы',
-        stringTwo: 'на рынке',
-        number: 1
-    }]
-}
+const initialState = [] as BenefitsValue[]
+
 
 export const BenefitsSlice = createSlice({
     name: 'benefits',
     initialState,
     reducers: {
-        initialBenefits: (state, action: PayloadAction<Array<BenefitsValue>>) => { state.value = action.payload },
-        createBenefit: (state, action: PayloadAction<BenefitsValue>) => { state.value.concat(action.payload) },
-        deleteBenefit: (state, action: PayloadAction<string>) => { state.value.filter(e => e.stringOne !== action.payload) }
+        setBenefits: (_state, action: PayloadAction<Array<BenefitsValue>>) => action.payload,
+        appendBenefit: (state, action: PayloadAction<BenefitsValue>) => state.concat(action.payload),
+        deleteBenefit: (state, action: PayloadAction<string>) => state.filter(e => e.stringOne !== action.payload)
     }
 })
 
-export const { createBenefit, deleteBenefit, initialBenefits } = BenefitsSlice.actions
+export const { appendBenefit, deleteBenefit, setBenefits } = BenefitsSlice.actions
+
+
+export const initializeBenefits = (): ThunkAction<void, RootState, unknown, Action<unknown>> => {
+    return async (dispatch) => {
+        const benefits = await benefitsService.getAll();
+        dispatch(setBenefits(benefits))
+    }
+}
 
 export default BenefitsSlice.reducer
