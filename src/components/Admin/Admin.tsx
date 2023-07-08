@@ -5,11 +5,10 @@ import AdminForm from "./AdminForm";
 
 
 const Admin = () => {
-    const admin = useSelector((state: RootState) => state.admin.value)
-
+    const admin = useSelector((state: RootState) => state.admin)
     return (
         <div>
-            {!admin
+            {admin.login
                 ? <AdminConfig />
                 : <AdminForm />}
         </div>
