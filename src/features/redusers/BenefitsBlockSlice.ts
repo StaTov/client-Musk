@@ -2,6 +2,8 @@ import { Action, createSlice, ThunkAction } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import benefitsService from '../../services/benefitsService';
 import { RootState } from '../../store';
+import axios from 'axios';
+import { showError } from './NoteSlice';
 
 
 export interface BenefitsValue {
@@ -10,7 +12,7 @@ export interface BenefitsValue {
     stringTwo: string;
     number: number;
 }
-
+ export type BenefitNoId = Omit<BenefitsValue, '_id'>
 
 const initialState = [] as BenefitsValue[]
 
@@ -30,9 +32,38 @@ export const { appendBenefit, deleteBenefit, setBenefits } = BenefitsSlice.actio
 
 export const initializeBenefits = (): ThunkAction<void, RootState, unknown, Action<unknown>> => {
     return async (dispatch) => {
-        const benefits = await benefitsService.getAll();
-        dispatch(setBenefits(benefits))
+        try {
+            const benefits = await benefitsService.getAll();
+            dispatch(setBenefits(benefits))
+        } catch (err) {
+            if (axios.isAxiosError(err) && err.response) {
+                console.error(err.response?.data.error);
+                dispatch(showError(err.response.data.error));
+            } else
+                if (err instanceof Error) {
+                    dispatch(showError(err.message))
+                }
+        }
     }
 }
+
+export const createBenefit = (obj: BenefitNoId): ThunkAction<void, RootState, unknown, Action<unknown>> => {
+    return async (dispatch) => {
+        try {
+            const newBenefit = await benefitsService.create(obj);
+            dispatch(appendBenefit(newBenefit))
+        } catch (err) {
+            if (axios.isAxiosError(err) && err.response) {
+                console.error(err.response?.data.error);
+                dispatch(showError(err.response.data.error));
+            } else
+                if (err instanceof Error) {
+                    dispatch(showError(err.message))
+                }
+        }
+    }
+}
+
+
 
 export default BenefitsSlice.reducer

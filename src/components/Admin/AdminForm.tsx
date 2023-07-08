@@ -20,10 +20,12 @@ const AdminForm = () => {
         <Container>
             <Box display={'flex'} justifyContent={'center'}>
                 <Paper elevation={3} sx={{ p: 3, m: 3 }} >
-                    <Box sx={{ pt: 1, ml: 3, mr: 3, height: '290px', textAlign: 'center' }}>
+                    <Box component={'form'} sx={{ pt: 1, ml: 3, mr: 3, height: '290px', textAlign: 'center' }}>
                         <Typography variant="h6">Добро пожаловать, Админ ; )</Typography>
                         <Box pt={3}>
                             <TextField
+                                required
+                                autoComplete="true"
                                 placeholder="enter email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}>
@@ -31,6 +33,7 @@ const AdminForm = () => {
                         </Box>
                         <Box pt={3}>
                             <TextField
+                                required
                                 type='password'
                                 placeholder="enter password"
                                 value={password}

@@ -9,7 +9,7 @@ const Note = () => {
     const dispatch = useAppDispatch();
     const note = useAppSelector((state: RootState) => state.note)
     const color = note.type as AlertColor
-    console.log('NOTE:', note)
+    
     if (!note.show) {
         return null
     }

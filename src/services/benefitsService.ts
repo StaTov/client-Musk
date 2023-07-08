@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { BenefitsValue } from "../features/redusers/BenefitsBlockSlice";
+import { BenefitNoId } from "../features/redusers/BenefitsBlockSlice";
 
 const baseURL = 'http://localhost:3001/benefits';
 
@@ -8,8 +8,10 @@ const getAll = async () => {
     return result.data;
 }
 
-const create = async (values: BenefitsValue) => {
-    const result = await axios.post(baseURL, values)
+const create = async (values: BenefitNoId) => {
+    const result = await axios.post(baseURL, values, {
+        withCredentials: true,
+    })
     return result.data;
 }
 

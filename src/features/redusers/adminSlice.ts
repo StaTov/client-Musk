@@ -1,7 +1,7 @@
 import { Action, ThunkAction, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../../store'
 import adminService from '../../services/adminService'
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 import { showError } from './NoteSlice'
 
 export interface IsAdmin {
@@ -34,15 +34,14 @@ export const loginAdmin = (obj: Admin): ThunkAction<void, RootState, unknown, Ac
             const result = await adminService.login(obj);
             if (result)
                 dispatch(yes())
-        } catch (err) {
+        }  catch (err) {
             if (axios.isAxiosError(err) && err.response) {
                 console.error(err.response?.data.error);
                 dispatch(showError(err.response.data.error));
-                
-            } else 
-            if (err instanceof Error) {
-                dispatch(showError(err.message))
-            } 
+            } else
+                if (err instanceof Error) {
+                    dispatch(showError(err.message))
+                }
         }
     }
 }
