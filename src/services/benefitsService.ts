@@ -1,11 +1,13 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import { BenefitNoId } from "../features/redusers/BenefitsBlockSlice";
 
 const baseURL = 'http://localhost:3001/benefits';
 
 const getAll = async () => {
-    const result = await axios.get(baseURL)
-    return result.data;
+    const result = await axios.get(baseURL,  {
+        withCredentials: true,
+    })
+      return result.data;
 }
 
 const create = async (values: BenefitNoId) => {
@@ -15,8 +17,10 @@ const create = async (values: BenefitNoId) => {
     return result.data;
 }
 
-const remove = async (value: AxiosRequestConfig<string>) => {
-    const result = await axios.delete(baseURL, value)
+const remove = async (id: string) => {
+    const result = await axios.delete(`${baseURL}/${id}`, {
+        withCredentials: true,
+    })
     return result.data;
 }
 

@@ -1,6 +1,6 @@
-import { useAppSelector } from "../../hooks"
+import { useAppSelector } from "../../features/hooks/hooks"
 import { RootState } from "../../store"
-import BenefitsItem from "./BenefitsItem"
+import BenefitsItem from "../Admin/LayoutBebefits"
 
 
 const Benefits = () => {

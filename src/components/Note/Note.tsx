@@ -1,6 +1,6 @@
 import { Alert, AlertColor, IconButton } from "@mui/material"
 import { RootState } from "../../store";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../features/hooks/hooks";
 import { hideNote } from "../../features/redusers/NoteSlice";
 import CloseIcon from '@mui/icons-material/Close';
 

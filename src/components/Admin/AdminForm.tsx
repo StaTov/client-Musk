@@ -1,22 +1,26 @@
 import { Box, Button, Container, Paper, TextField, Typography } from "@mui/material";
 import { useState } from "react";
-import { useAppDispatch } from "../../hooks";
+import { useAppDispatch } from "../../features/hooks/hooks";
 import { loginAdmin } from "../../features/redusers/adminSlice";
 import Note from "../Note/Note";
-import { showError } from "../../features/redusers/NoteSlice";
-import axios from "axios";
+
 
 
 const AdminForm = () => {
+    
     const dispatch = useAppDispatch();
+
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
     const handleAdmin = (e: React.SyntheticEvent) => {
         e.preventDefault()
         dispatch(loginAdmin({ email, password }))
+        setEmail('')
+        setPassword('')
     }
     return (
+
         <Container>
             <Box display={'flex'} justifyContent={'center'}>
                 <Paper elevation={3} sx={{ p: 3, m: 3 }} >

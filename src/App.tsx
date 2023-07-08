@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router";
 import About from "./components/About/About";
-import Admin from "./components/Admin/Admin";
+import Admin from "./components/Admin";
 import Contacts from "./components/Contacts/Contacts";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Flights from "./components/Flights/Flights";
@@ -10,15 +10,21 @@ import MainPage from "./components/MainPage/MainPage";
 import Nav from "./components/Nav/Nav";
 import Technologies from "./components/Technologies/Texhnologies";
 import { initializeBenefits } from "./features/redusers/BenefitsBlockSlice";
-import { useAppDispatch } from "./hooks";
+import { useAppDispatch } from "./features/hooks/hooks";
+import { toLogin } from "./features/redusers/adminSlice";
 
 
 function App() {
- 
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(initializeBenefits())
+    const admin = localStorage.getItem('MUSK-AUTH')
+
+    if (admin) {
+      dispatch(toLogin())
+    }
   }, [dispatch])
 
   return (

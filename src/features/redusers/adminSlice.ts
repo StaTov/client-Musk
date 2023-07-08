@@ -21,20 +21,22 @@ export const adminSlice = createSlice({
     name: 'admin',
     initialState,
     reducers: {
-        yes: (state) => { state.login = true },
-        no: (state) => { state.login = false },
+        toLogin: (state) => { state.login = true },
+        toLogout: (state) => { state.login = false },
     }
 })
 
-export const { yes, no } = adminSlice.actions
+export const { toLogin, toLogout } = adminSlice.actions
 
 export const loginAdmin = (obj: Admin): ThunkAction<void, RootState, unknown, Action<unknown>> => {
     return async (dispatch) => {
         try {
-            const result = await adminService.login(obj);
+            const result = await adminService.loginAdmin(obj);
             if (result)
-                dispatch(yes())
-        }  catch (err) {
+                localStorage.setItem('MUSK-AUTH', JSON.stringify(result))
+                console.log('FGF', localStorage.getItem('MUSK-AUTH'))
+            dispatch(toLogin())
+        } catch (err) {
             if (axios.isAxiosError(err) && err.response) {
                 console.error(err.response?.data.error);
                 dispatch(showError(err.response.data.error));
@@ -46,4 +48,21 @@ export const loginAdmin = (obj: Admin): ThunkAction<void, RootState, unknown, Ac
     }
 }
 
+export const logoutAdmin = (): ThunkAction<void, RootState, unknown, Action<unknown>> => {
+    return async (dispatch) => {
+        try {
+            await adminService.logoutAdmin();
+            localStorage.removeItem('MUSK-AUTH')
+            dispatch(toLogout())
+        } catch (err) {
+            if (axios.isAxiosError(err) && err.response) {
+                console.error(err.response?.data.error);
+                dispatch(showError(err.response.data.error));
+            } else
+                if (err instanceof Error) {
+                    dispatch(showError(err.message))
+                }
+        }
+    }
+}
 export default adminSlice.reducer
