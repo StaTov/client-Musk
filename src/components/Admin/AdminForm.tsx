@@ -16,9 +16,7 @@ const AdminForm = () => {
     const handleAdmin = (e: React.SyntheticEvent) => {
         e.preventDefault()
         dispatch(loginAdmin({ email, password }))
-        setEmail('')
-        setPassword('')
-    }
+            }
     return (
 
         <Container>

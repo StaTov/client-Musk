@@ -31,24 +31,25 @@ const AdminPanel = () => {
             <Box m={3} >
                 <Paper elevation={3} sx={{ p: 3 }}>
                     <Box textAlign={'center'}>
-                        <Typography fontSize={'3vw'} variant="h6">
+                        <Typography variant="h3">
                             Редактор
                         </Typography>
                     </Box>
                     <Box mt={4} display={'flex'} justifyContent={'space-between'}>
-                        <Box sx={{ width: '25vw' }}>
-                            <Typography fontSize={'2vw'} variant="h6" >макет</Typography>
+                        <Box sx={{ width: '30%' }}>
+                            <Typography  variant="h5" >макет</Typography>
                             <Grid pt={3} container rowSpacing={1} columnSpacing={1}>
                                 {benefits.map(b => <BenefitsItem data={b} key={b._id} />)}
                             </Grid>
                         </Box>
-                        <Box sx={{ width: '50vw', border: 'solid', display: 'flex', flexDirection: 'column' }}>
+                        <Box sx={{ width: '60%', border: 'solid', display: 'flex', flexDirection: 'column' }}>
                             <Box sx={{ alignSelf: 'flex-end' }}>
                                 <Button variant="contained" onClick={hadleLogout}>Logout</Button>
                             </Box>
                             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <Box component={'form'}>
                                     <TextField
+                                       id="standard-required"
                                         required
                                         label="email"
                                         minRows={3}
