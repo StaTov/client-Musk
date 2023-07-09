@@ -12,7 +12,10 @@ import Technologies from "./components/Technologies/Texhnologies";
 import { initializeBenefits } from "./features/redusers/BenefitsBlockSlice";
 import { useAppDispatch } from "./features/hooks/hooks";
 import { toLogin } from "./features/redusers/adminSlice";
-import { Container } from "./style/styledComponents";
+import { Container, ContextMenu, SidebarLink } from "./style/styledComponents";
+import Typography from "@mui/material/Typography";
+import { indigo } from "@mui/material/colors";
+import SideBar from "./components/SideBar/SideBar";
 
 
 
@@ -32,6 +35,7 @@ function App() {
 
   return (
     <Container className="App">
+      <SideBar />
       <Routes>
         <Route path="/" element={<Nav />}>
           <Route path="/" element={<MainPage />} />
