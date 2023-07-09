@@ -9,7 +9,7 @@ export const ContextMenu = styled.div`
 right: 0;
 border: 1px solid gray;
 position: absolute;
-background: #073763;
+background: #051e34;
 height: 100vh;
 width: 200px;
 display: flex;
@@ -38,30 +38,27 @@ export const ImgBox = styled.div`
   padding-left: 40px;
 }
 `
-export const SidebarLink = styled(Link)`
-color:white;
-font-size: middle;
-font-family: Arial, Helvetica, sans-serif;
+export const MenuItem = styled(Link)`
+color: white;
 display: flex;
 align-items: center;
-padding: 10px 12px 20px 12px;
+padding: 0px 12px;
+margin: 15px;
+text-decoration: none;
 
 &:hover{
-   opacity: 0.3;
+opacity: 0.3;
 },
 &:focus{
-   color: gray;
+  color: gray;
 };
 &:active{
-   color: red;
+  color: red;
 };
-@media(max-width: 891px) {
- display: none;
-}
 `
 
 export const NavbarLink = styled(Link)`
- color:white;
+ color: white;
  font-size: middle;
  font-family: Arial, Helvetica, sans-serif;
  text-decoration: none;

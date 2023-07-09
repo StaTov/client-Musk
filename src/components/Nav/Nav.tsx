@@ -26,8 +26,8 @@ const Nav = () => {
                     <NavbarLink to={"/contacts"}>Контакты</NavbarLink >
                 </NavMenu>
                 {toggle &&
-                    <BurgerIcon >
-                        <IconButton onClick={() => dispatch(tooggle())}>
+                    <BurgerIcon  >
+                        <IconButton  onClick={() => dispatch(tooggle())}>
                             <MenuIcon fontSize="large" sx={{ color: indigo[50] }} />
                         </IconButton>
                     </BurgerIcon>

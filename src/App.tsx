@@ -12,9 +12,7 @@ import Technologies from "./components/Technologies/Texhnologies";
 import { initializeBenefits } from "./features/redusers/BenefitsBlockSlice";
 import { useAppDispatch } from "./features/hooks/hooks";
 import { toLogin } from "./features/redusers/adminSlice";
-import { Container, ContextMenu, SidebarLink } from "./style/styledComponents";
-import Typography from "@mui/material/Typography";
-import { indigo } from "@mui/material/colors";
+import { Container} from "./style/styledComponents";
 import SideBar from "./components/SideBar/SideBar";
 
 
