@@ -17,10 +17,10 @@ const AdminForm = () => {
         e.preventDefault()
         dispatch(loginAdmin({ email, password }))
             }
-    return (
 
+    return (
         <Container>
-            <Box display={'flex'} justifyContent={'center'}>
+            <Box mt={4} display={'flex'} justifyContent={'center'}>
                 <Paper elevation={3} sx={{ p: 3, m: 3 }} >
                     <Box component={'form'} sx={{ pt: 1, ml: 3, mr: 3, height: '290px', textAlign: 'center' }}>
                         <Typography variant="h6">Добро пожаловать, Админ ; )</Typography>

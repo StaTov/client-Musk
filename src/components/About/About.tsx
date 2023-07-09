@@ -1,3 +1,4 @@
+import Typography from "@mui/material/Typography";
 
 
 const About = () => {
@@ -5,7 +6,7 @@ const About = () => {
 
     return (
         <div>
-            About
+            <Typography sx={{color: "white", p: 5}} variant="h3">About...</Typography>
           
         </div>
     )

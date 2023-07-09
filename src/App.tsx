@@ -12,6 +12,9 @@ import Technologies from "./components/Technologies/Texhnologies";
 import { initializeBenefits } from "./features/redusers/BenefitsBlockSlice";
 import { useAppDispatch } from "./features/hooks/hooks";
 import { toLogin } from "./features/redusers/adminSlice";
+import { Container } from "./style/styledComponents";
+
+
 
 
 function App() {
@@ -28,7 +31,7 @@ function App() {
   }, [dispatch])
 
   return (
-    <div className="App">
+    <Container className="App">
       <Routes>
         <Route path="/" element={<Nav />}>
           <Route path="/" element={<MainPage />} />
@@ -41,7 +44,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
         <Route path="/auth/admin/login" element={<Admin />} />
       </Routes>
-    </div>
+    </Container>
   );
 }
 
