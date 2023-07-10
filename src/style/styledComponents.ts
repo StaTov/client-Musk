@@ -10,7 +10,7 @@ export const ContextMenu = styled.div`
 right: 0;
 border: 1px solid gray;
 position: absolute;
-background: #051e34;
+background:  #002137;
 height: 100vh;
 width: 200px;
 display: flex;
@@ -117,7 +117,6 @@ justify-content: space-between;
 export const Page = styled.div`
 
 font-family: "Roboto";
-border: 1px solid red;
 display: flex;
 flex-wrap: wrap;
 width: 100%;
@@ -134,10 +133,21 @@ width: 100%;
  
 }
 `
+export const Wrapper = styled.div`
+@media only screen and (max-width: 400px) {
+ width: 100%;
+}
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+ width: 460px;
+ margin: 0 auto;
+ }
+@media only screen and (min-width: 961px) {
+}
+`
+
 export const PageElement = styled.div`
 
 
-border: 1px solid green;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -149,35 +159,59 @@ border: 1px solid green;
   padding: 10px;
 }
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-  width: 50%;
+  margin-top: 20px;
+  width: 100%;
   height: auto;
-}
+  padding: 15px;
+  
+ }
 @media only screen and (min-width: 961px) {
 }
 `
-export const FontMin = styled.div`
+export const FontNews = styled.div`
+color: white;
 @media only screen and (max-width: 400px) {
-  color: white;
   font-size: 10px;
-
+  line-height: 1.25rem;
 
 }
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-  
+  font-size: 15px;
+  line-height: 1.25rem;
+}
+@media only screen and (min-width: 961px) {
+}
+
+`
+
+export const FontMin = styled.div`
+color: white;
+@media only screen and (max-width: 400px) {
+  font-size: 10px;
+
+}
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  font-size: 10px;
 }
 @media only screen and (min-width: 961px) {
 }
 `
 export const FontMax = styled.div`
+color: white;
+
 @media only screen and (max-width: 400px) {
-  color: white;
-  font-size: 35px;
+  font-size: 30px;
   transition: font-size 0.2s;
   &:hover {
     font-size: 40px;
 }
+}
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-  
+  font-size: 34px;
+  transition: font-size 0.2s;
+  &:hover {
+    font-size: 40px;
+}
 }
 @media only screen and (min-width: 961px) {
 }
@@ -187,8 +221,8 @@ export const BenefitsContainer = styled.div`
 
 color: white;
 margin: 1px;
-width: 23vw;
-height: 23vw;
+width: 90px;
+height: 90px;
 font-size: middle;
   display: flex;
   flex-direction: column;
@@ -202,3 +236,53 @@ cursor: pointer;
 background:  linear-gradient(to bottom,  rgba(250, 250, 250, .12), transparent 100%);
 }
 ` 
+
+
+export const ButtonStart = styled.button`
+height: 50px;
+margin: 5px;
+width: 120px;
+background: #333;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+font-family: Consolas, Courier New, monospace;
+border: solid #404C5D 1px;
+font-size: 16px;
+color: white;
+-webkit-transition: 500ms;
+transition: 500ms;
+border-radius: 5px;
+background: linear-gradient(145deg, #2e2d2d, #212121);
+-webkit-box-shadow: -1px -5px 15px #41465B, 
+             5px  5px 15px #41465B, 
+  inset      5px  5px 10px #212121, 
+  inset     -5px -5px 10px #212121;
+box-shadow: -1px -5px 15px #41465B, 
+             5px  5px 15px #41465B, 
+  inset      5px  5px 10px #212121, 
+  inset     -5px -5px 10px #212121;
+
+&:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 13px #20232e,
+                    -1px -1px 13px #545b78;
+  box-shadow: 1px 1px 13px #20232e,
+             -1px -1px 13px #545b78;
+  color: #d6d6d6;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+&:active {
+  -webkit-box-shadow: 1px 1px 13px #20232e,
+                     -1px -1px 33px #545b78;
+  box-shadow: 1px 1px 13px #20232e,
+             -1px -1px 33px #545b78;
+  color: #d6d6d6;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+`
