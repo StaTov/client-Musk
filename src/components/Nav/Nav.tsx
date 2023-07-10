@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { BurgerIcon, ImgBox, NavBar, NavMenu, NavbarLink } from "../../style/styledComponents";
 import logo from "../../images/logo.png";
-import { IconButton, Toolbar } from "@mui/material";
+import { IconButton } from "@mui/material";
 import indigo from "@mui/material/colors/indigo";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useAppDispatch, useAppSelector } from "../../features/hooks/hooks";
@@ -27,14 +27,12 @@ const Nav = () => {
                 </NavMenu>
                 {toggle &&
                     <BurgerIcon  >
-                        <IconButton  onClick={() => dispatch(tooggle())}>
+                        <IconButton onClick={() => dispatch(tooggle())}>
                             <MenuIcon fontSize="large" sx={{ color: indigo[50] }} />
                         </IconButton>
                     </BurgerIcon>
                 }
             </NavBar>
-            <Toolbar>
-            </Toolbar>
             <div>
                 <Outlet />
             </div>
