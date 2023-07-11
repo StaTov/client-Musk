@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { device } from './constants';
-import img from '../images/fon.jpg';
+import img from '../images/p1.jpg';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ export const ContextMenu = styled.div<{ hidden?: boolean; }>`
 right: 0;
 border: 1px solid gray;
 position: absolute;
-background:  #1f253a;
+background: url(${img});
 height: 100vh;
 width: 200px;
 display:${props => props.hidden ? 'none' : 'flex'};
@@ -18,7 +18,6 @@ flex-direction: column;
 align-items: flex-start;
 animation-duration: 0.4s;
 animation-name: anim;
-
 
 @keyframes anim{
 from {
@@ -128,34 +127,32 @@ justify-content: space-between;
 
 
 export const Page = styled.div`
-
+border: 1px solid green;
 font-family: "Roboto";
 display: flex;
 flex-wrap: wrap;
 width: 100%;
 
 
-@media ${device.laptop} { 
-  max-width: 900px;
+@media only screen and (min-width: 961px) {
+  width: 800px;
   margin: 0 auto;
-
-}
-
-@media ${device.desktop} {
-  max-width: 1400px;
- 
 }
 `
 export const Wrapper = styled.div`
-
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
 @media only screen and (max-width: 400px) {
-  width: 290px;
- margin: 0 auto;
+   margin: 0 auto;
+   gap: 1vw;
 }
+
 @media only screen and (min-width: 401px) and (max-width: 960px) {
- 
- width: 300px;
+ width: auto;
  margin: 0 auto;
+ border: 1px solid red;
+ gap: 1vw;
  }
 @media only screen and (min-width: 961px) {
 }
@@ -239,26 +236,26 @@ export const BenefitsContainer = styled.div`
 border-radius: 2px;
 color: white;
 margin: 1px;
-width: 90px;
-height: 90px;
+width: 105px;
+height: 105px;
 font-size: middle;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background:  linear-gradient(to bottom,  rgba(250, 250, 250, .1), transparent 100%);
+  background:  rgba(250, 250, 250, 0.06);
   
 
   &:hover {
 cursor: pointer;
-background:  linear-gradient(to bottom,  rgba(250, 250, 250, .12), transparent 100%);
+background: rgba(0, 0, 0, .5)
 }
  
 @media only screen and (max-width: 400px) {
  
 }
 @media only screen and  (min-width: 401px) and (max-width: 960px) {
-  margin: 20px ;  
+  
   }
 `
 

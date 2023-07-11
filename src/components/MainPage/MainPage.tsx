@@ -24,9 +24,7 @@ const MainPage = () => {
                 </Paper>
             </PageElement>
             <Wrapper>
-                <PageElement>
-                    {benefits.map(b => <BenefitsItem key={b._id} value={b} />)}
-                </PageElement>
+                {benefits.map(b => <BenefitsItem key={b._id} value={b} />)}
             </Wrapper>
             <PageElement>
                 <Box mt={3}>
