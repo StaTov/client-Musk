@@ -6,7 +6,7 @@ import { useState } from "react";
 import { createBenefit } from "../../features/redusers/benefitsSlice";
 import { logoutAdmin } from "../../features/redusers/adminSlice";
 import TextField from '@mui/material/TextField'
-import { Wrapper } from "../../style/styledComponents";
+import { AdminWrapper, Wrapper } from "../../style/styledComponents";
 import { showError } from "../../features/redusers/noteSlice";
 import Note from "../Note/Note";
 import BenefitsItem from "./AdminBebefits";
@@ -35,9 +35,11 @@ const AdminPanel = () => {
     }
     return (
         <Container>
+
             <Box m={3} >
                 <Paper elevation={3} sx={{ bgcolor: '#f4f6f6 ', p: 3 }}>
-                    <Box textAlign='center'>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <div></div>
                         <Typography variant="h5">
                             Редактор
                         </Typography>
@@ -47,14 +49,13 @@ const AdminPanel = () => {
                     </Box>
                     <Grid container spacing={2}>
                         <Grid mt={3} item xs={6}>
-                            <Typography variant="body1"  >макет</Typography>
+                            <Typography variant="body1" >макет</Typography>
                             <Box sx={{ mt: 1, borderRadius: 1.5, bgcolor: ' #273746 ', width: '240px', p: 1 }}>
-                                <Wrapper>
+                                <AdminWrapper>
                                     {benefits.map(b => <BenefitsItem key={b._id} value={b} />)}
-                                </Wrapper>
+                                </AdminWrapper>
                             </Box>
                         </Grid>
-
                         <Grid item xs={6}>
                             <Box sx={{ mt: 7, display: 'flex', flexDirection: 'column' }}>
                                 <Paper sx={{ p: 3 }} component={'form'}>
@@ -70,18 +71,18 @@ const AdminPanel = () => {
                                         <TextField
                                             variant="standard"
                                             required
-                                            label="нижняя строчка"
-                                            minRows={3}
-                                            value={stringTwo}
-                                            onChange={(e) => setStringTwo(e.target.value)}
-                                        />
-                                        <TextField
-                                            variant="standard"
-                                            required
                                             type='number'
                                             placeholder="enter text"
                                             value={number}
                                             onChange={(e) => setNumber(Number(e.target.value))}
+                                        />
+                                        <TextField
+                                            variant="standard"
+                                            required
+                                            label="нижняя строчка"
+                                            minRows={3}
+                                            value={stringTwo}
+                                            onChange={(e) => setStringTwo(e.target.value)}
                                         />
                                         <Button onClick={handleCreate}>Создать</Button>
                                     </Box>

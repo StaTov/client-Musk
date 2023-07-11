@@ -139,6 +139,7 @@ width: 100%;
 }
 `
 export const Wrapper = styled.div`
+border: 1px solid red;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr;
@@ -155,6 +156,25 @@ grid-template-rows: 1fr 1fr;
 @media only screen and (min-width: 961px) {
 gap: 10px;
 margin-top: 33px;
+}
+`
+export const AdminWrapper = styled.div`
+border: 1px solid red;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+@media only screen and (max-width: 400px) {
+   margin: 0 auto;
+   gap: 1vw;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+ width: auto;
+ margin: 0 auto;
+ gap: 1vw;
+ }
+@media only screen and (min-width: 961px) {
+gap: 10px;
 }
 `
 
