@@ -127,7 +127,6 @@ justify-content: space-between;
 
 
 export const Page = styled.div`
-border: 1px solid green;
 font-family: "Roboto";
 display: flex;
 flex-wrap: wrap;
@@ -137,6 +136,7 @@ width: 100%;
 @media only screen and (min-width: 961px) {
   width: 800px;
   margin: 0 auto;
+ 
 }
 `
 export const Wrapper = styled.div`
@@ -151,10 +151,11 @@ grid-template-rows: 1fr 1fr;
 @media only screen and (min-width: 401px) and (max-width: 960px) {
  width: auto;
  margin: 0 auto;
- border: 1px solid red;
  gap: 1vw;
  }
 @media only screen and (min-width: 961px) {
+gap: 10px;
+margin-top: 33px;
 }
 `
 
@@ -180,6 +181,12 @@ export const PageElement = styled.div`
   
  }
 @media only screen and (min-width: 961px) {
+   margin-top: 20px;
+  width: 560px;
+  height: auto;
+  padding: 15px;
+  align-items: start;
+  justify-content: flex-start;
 }
 `
 export const FontNews = styled.div`
@@ -194,6 +201,8 @@ color: white;
   line-height: 1.25rem;
 }
 @media only screen and (min-width: 961px) {
+  font-size: 15px;
+  line-height: 1.25rem;
 }
 
 `
@@ -208,6 +217,7 @@ color: white;
   font-size: 10px;
 }
 @media only screen and (min-width: 961px) {
+  font-size: 10px;
 }
 `
 export const FontMax = styled.div`
@@ -228,12 +238,18 @@ color: white;
 }
 }
 @media only screen and (min-width: 961px) {
+  font-size: 34px;
+  transition: font-size 0.2s;
+  &:hover {
+        font-size: 40px;
+}
 }
 `
 
+
 export const BenefitsContainer = styled.div`
 
-border-radius: 2px;
+border-radius: 5px;
 color: white;
 margin: 1px;
 width: 105px;
@@ -248,15 +264,10 @@ font-size: middle;
 
   &:hover {
 cursor: pointer;
-background: rgba(0, 0, 0, .5)
+background: rgba(250, 250, 250, .3)
 }
  
-@media only screen and (max-width: 400px) {
- 
-}
-@media only screen and  (min-width: 401px) and (max-width: 960px) {
-  
-  }
+
 `
 
 export const ButtonStart = styled.button`

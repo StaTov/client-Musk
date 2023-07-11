@@ -11,7 +11,7 @@ const MainPage = () => {
     return (
         <Page>
             <PageElement>
-                <Paper sx={{ pr: 0.5, pl: 3, pt: 1, pb: 0.3, background: 'rgba(250, 250, 250, .06)' }}>
+                <Paper sx={{ pr: 2, pl: 3, pt: 1, pb: 1, background: 'rgba(250, 250, 250, .06)' }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                         <Typography mb={1} variant='subtitle1' color={"white"} >News</Typography>
                         <FontNews>
