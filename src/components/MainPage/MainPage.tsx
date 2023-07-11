@@ -22,9 +22,7 @@ const MainPage = () => {
                         <Typography variant='caption' color={"gray"} sx={{ fontSize: '6px', alignSelf: 'flex-end' }}>12.03.2026</Typography>
                     </Box>
                 </Paper>
-
             </PageElement>
-
             <Wrapper>
                 <PageElement>
                     {benefits.map(b => <BenefitsItem key={b._id} value={b} />)}

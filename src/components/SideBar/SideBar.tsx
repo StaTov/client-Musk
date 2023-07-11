@@ -9,21 +9,19 @@ const SideBar = () => {
     const dispatch = useAppDispatch();
     const toggle = useAppSelector(state => state.sideBar)
 
-    if (toggle) {
-        return null;
-    }
+
     return (
-        <ContextMenu>
+        <ContextMenu hidden={toggle}>
             <IconButton onClick={() => dispatch(tooggle())} sx={{ alignSelf: 'flex-end', m: 1 }}>
                 <CloseIcon sx={{ color: indigo[50] }} />
             </IconButton>
-            <Typography sx={{ mb: 3, borderBottom: 'solid' }} color={indigo[50]}>menu</Typography>
-            <MenuItem to={"/"}>Главная</MenuItem>
-            <MenuItem to={"/tech"}>Технология</MenuItem >
-            <MenuItem to={"/flights"}>График полетов</MenuItem >
-            <MenuItem to={"/guarantees"}>Гарантии</MenuItem >
-            <MenuItem to={"/about "}>О компании</MenuItem >
-            <MenuItem to={"/contacts"}>Контакты</MenuItem >
+            <Typography sx={{ ml: 10, mb: 3, borderBottom: 'solid' }} color={indigo[50]}>menu</Typography>
+            <MenuItem  onClick={() => dispatch(tooggle())} to={"/"}>Главная</MenuItem>
+            <MenuItem onClick={() => dispatch(tooggle())} to={"/tech"}>Технология</MenuItem >
+            <MenuItem onClick={() => dispatch(tooggle())} to={"/flights"}>График полетов</MenuItem >
+            <MenuItem onClick={() => dispatch(tooggle())} to={"/guarantees"}>Гарантии</MenuItem >
+            <MenuItem onClick={() => dispatch(tooggle())} to={"/about "}>О компании</MenuItem >
+            <MenuItem onClick={() => dispatch(tooggle())} to={"/contacts"}>Контакты</MenuItem >
         </ContextMenu>
     )
 }

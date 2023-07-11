@@ -5,17 +5,28 @@ import { Link } from 'react-router-dom';
 
 
 
-export const ContextMenu = styled.div`
+export const ContextMenu = styled.div<{ hidden?: boolean; }>`
 
 right: 0;
 border: 1px solid gray;
 position: absolute;
-background:  #002137;
+background:  #1f253a;
 height: 100vh;
 width: 200px;
-display: flex;
+display:${props => props.hidden ? 'none' : 'flex'};
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
+animation-duration: 0.4s;
+animation-name: anim;
+
+
+@keyframes anim{
+from {
+  right:  -200px;
+}
+to {
+  right: 0;
+}
 `
 
 export const BurgerIcon = styled.div`
@@ -48,6 +59,7 @@ align-items: center;
 padding: 0px 12px;
 margin: 15px;
 text-decoration: none;
+
 
 &:hover{
 opacity: 0.3;
@@ -93,10 +105,11 @@ display: flex;
 
 export const Container = styled.div`
 background: url(${img})  ;
+position: relative;
+background-attachment: fixed;
 background-size: cover;
-width: 100vw;
-height: 100vh;
-overflow: auto
+min-height: 100vh;
+overflow: hidden;
 p: 0;
 m: 0;
 
@@ -134,11 +147,14 @@ width: 100%;
 }
 `
 export const Wrapper = styled.div`
+
 @media only screen and (max-width: 400px) {
- width: 100%;
+  width: 290px;
+ margin: 0 auto;
 }
 @media only screen and (min-width: 401px) and (max-width: 960px) {
- width: 460px;
+ 
+ width: 300px;
  margin: 0 auto;
  }
 @media only screen and (min-width: 961px) {
@@ -157,6 +173,7 @@ export const PageElement = styled.div`
   width: 100%;
   height: auto;
   padding: 10px;
+  
 }
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   margin-top: 20px;
@@ -219,6 +236,7 @@ color: white;
 
 export const BenefitsContainer = styled.div`
 
+border-radius: 2px;
 color: white;
 margin: 1px;
 width: 90px;
@@ -235,8 +253,14 @@ font-size: middle;
 cursor: pointer;
 background:  linear-gradient(to bottom,  rgba(250, 250, 250, .12), transparent 100%);
 }
-` 
-
+ 
+@media only screen and (max-width: 400px) {
+ 
+}
+@media only screen and  (min-width: 401px) and (max-width: 960px) {
+  margin: 20px ;  
+  }
+`
 
 export const ButtonStart = styled.button`
 height: 50px;
