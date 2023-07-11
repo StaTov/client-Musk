@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import benefitsService from '../../services/benefitsService';
 import { RootState } from '../../store';
 import axios from 'axios';
-import { showError } from './NoteSlice';
+import { showError } from './noteSlice';
 
 
 export interface BenefitsValue {
@@ -23,7 +23,7 @@ export const BenefitsSlice = createSlice({
     reducers: {
         setBenefits: (_state, action: PayloadAction<Array<BenefitsValue>>) => action.payload,
         appendBenefit: (state, action: PayloadAction<BenefitsValue>) => state.concat(action.payload),
-        deleteBenefit: (state, action: PayloadAction<string>) => state.filter(e => e.stringOne !== action.payload)
+        deleteBenefit: (state, action: PayloadAction<string>) => state.filter(e => e._id !== action.payload)
     }
 })
 
@@ -63,6 +63,24 @@ export const createBenefit = (obj: BenefitNoId): ThunkAction<void, RootState, un
         }
     }
 }
+
+export const removeBenefit = (id: string): ThunkAction<void, RootState, unknown, Action<unknown>> => {
+    return async (dispatch) => {
+        try {
+             await benefitsService.remove(id);
+            dispatch(deleteBenefit(id))
+        } catch (err) {
+            if (axios.isAxiosError(err) && err.response) {
+                console.error(err.response?.data.error);
+                dispatch(showError(err.response.data.error));
+            } else
+                if (err instanceof Error) {
+                    dispatch(showError(err.message))
+                }
+        }
+    }
+}
+
 
 
 

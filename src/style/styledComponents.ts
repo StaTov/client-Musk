@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { device } from './constants';
 import img from '../images/p1.jpg';
 import { Link } from 'react-router-dom';
 
@@ -248,7 +247,6 @@ color: white;
 
 
 export const BenefitsContainer = styled.div`
-
 border-radius: 5px;
 color: white;
 margin: 1px;
@@ -269,7 +267,27 @@ background: rgba(250, 250, 250, .3)
  
 
 `
+export const BenefitsAdmin = styled.div`
+position: relative;
+border-radius: 5px;
+color: white;
+margin: 1px;
+width: 105px;
+height: 105px;
+font-size: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:  rgba(250, 250, 250, 0.06);
+  
+  &:hover {
+cursor: pointer;
+background: rgba(250, 250, 250, .3)
+}
+ 
 
+`
 export const ButtonStart = styled.button`
 height: 50px;
 margin: 5px;

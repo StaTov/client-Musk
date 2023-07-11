@@ -1,4 +1,4 @@
-import { BenefitsValue } from "../../features/redusers/BenefitsBlockSlice"
+import { BenefitsValue } from "../../features/redusers/benefitsSlice"
 import { BenefitsContainer, FontMax, FontMin } from "../../style/styledComponents"
 
 interface PropsBenefits {

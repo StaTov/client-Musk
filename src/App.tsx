@@ -9,7 +9,7 @@ import Guarantees from "./components/Guarantees/Guarantees";
 import MainPage from "./components/MainPage/MainPage";
 import Nav from "./components/Nav/Nav";
 import Technologies from "./components/Technologies/Texhnologies";
-import { initializeBenefits } from "./features/redusers/BenefitsBlockSlice";
+import { initializeBenefits } from "./features/redusers/benefitsSlice";
 import { useAppDispatch } from "./features/hooks/hooks";
 import { toLogin } from "./features/redusers/adminSlice";
 import { Container} from "./style/styledComponents";
@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     dispatch(initializeBenefits())
-    const admin = localStorage.getItem('MUSK-AUTH')
+    const admin = sessionStorage.getItem('MUSK-AUTH')
 
     if (admin) {
       dispatch(toLogin())

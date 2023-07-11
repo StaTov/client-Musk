@@ -7,7 +7,7 @@ import Note from "../Note/Note";
 
 
 const AdminForm = () => {
-    
+
     const dispatch = useAppDispatch();
 
     const [email, setEmail] = useState<string>('')
@@ -16,7 +16,7 @@ const AdminForm = () => {
     const handleAdmin = (e: React.SyntheticEvent) => {
         e.preventDefault()
         dispatch(loginAdmin({ email, password }))
-            }
+    }
 
     return (
         <Container>

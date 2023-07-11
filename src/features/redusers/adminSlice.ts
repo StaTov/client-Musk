@@ -2,7 +2,7 @@ import { Action, ThunkAction, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../../store'
 import adminService from '../../services/adminService'
 import axios from 'axios'
-import { showError } from './NoteSlice'
+import { showError } from './noteSlice'
 
 export interface IsAdmin {
     login: boolean
@@ -33,8 +33,7 @@ export const loginAdmin = (obj: Admin): ThunkAction<void, RootState, unknown, Ac
         try {
             const result = await adminService.loginAdmin(obj);
             if (result)
-                localStorage.setItem('MUSK-AUTH', JSON.stringify(result))
-                console.log('FGF', localStorage.getItem('MUSK-AUTH'))
+                sessionStorage.setItem('MUSK-AUTH', JSON.stringify(result))
             dispatch(toLogin())
         } catch (err) {
             if (axios.isAxiosError(err) && err.response) {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BenefitNoId } from "../features/redusers/BenefitsBlockSlice";
+import { BenefitNoId } from "../features/redusers/benefitsSlice";
 
 const baseURL = 'http://localhost:3001/benefits';
 
