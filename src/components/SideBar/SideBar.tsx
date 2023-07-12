@@ -16,7 +16,7 @@ const SideBar = () => {
                 <CloseIcon sx={{ color: indigo[50] }} />
             </IconButton>
             <Typography sx={{ ml: 10, mb: 3, borderBottom: 'solid' }} color={indigo[50]}>menu</Typography>
-            <MenuItem  onClick={() => dispatch(tooggle())} to={"/"}>Главная</MenuItem>
+            <MenuItem onClick={() => dispatch(tooggle())} to={"/"}>Главная</MenuItem>
             <MenuItem onClick={() => dispatch(tooggle())} to={"/tech"}>Технология</MenuItem >
             <MenuItem onClick={() => dispatch(tooggle())} to={"/flights"}>График полетов</MenuItem >
             <MenuItem onClick={() => dispatch(tooggle())} to={"/guarantees"}>Гарантии</MenuItem >

@@ -95,11 +95,31 @@ export const NavbarLink = styled(Link)`
 }
  `
 
-export const NavMenu = styled.div`
+export const NavMenu = styled.nav`
 width: 100%;
 display: flex;
 
 `
+export const NoteBox = styled.div`
+position: absolute; 
+width: 350px;
+left: 0;
+right: 0;
+margin: 0 auto;
+bottom: 5%;
+animation-duration: 0.4s;
+animation-name: anim;
+
+@keyframes anim{
+  from {
+    bottom: 0%;;
+  }
+  to {
+    bottom: 5%;
+  }
+;
+`
+
 
 export const Container = styled.div`
 background: url(${img})  ;
@@ -139,7 +159,6 @@ width: 100%;
 }
 `
 export const Wrapper = styled.div`
-border: 1px solid red;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr;
@@ -159,7 +178,6 @@ margin-top: 33px;
 }
 `
 export const AdminWrapper = styled.div`
-border: 1px solid red;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr;

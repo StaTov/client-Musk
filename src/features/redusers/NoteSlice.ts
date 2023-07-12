@@ -17,8 +17,8 @@ export const NoteSlice = createSlice({
     name: 'note',
     initialState,
     reducers: {
-        showNote: (state, action: PayloadAction<string>) => {return { message: action.payload, show: true, type: 'success' }},
-        showError: (state, action: PayloadAction<string>) => {return { message: action.payload, show: true, type: 'error' }},
+        showNote: (_state, action: PayloadAction<string>) => {return { message: action.payload, show: true, type: 'success' }},
+        showError: (_state, action: PayloadAction<string>) => {return { message: action.payload, show: true, type: 'error' }},
         hideNote: (state) => {return state = {...state, message: '', show: false}}
     }
 })

@@ -6,9 +6,7 @@ interface PropsBenefits {
 }
 
 const BenefitsItem = ({ value }: PropsBenefits) => {
-
     return (
-        
         <BenefitsContainer>
             <FontMin>{value.stringOne}</FontMin>
             <FontMax>{value.number}</FontMax>

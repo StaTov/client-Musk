@@ -12,11 +12,9 @@ import Technologies from "./components/Technologies/Texhnologies";
 import { initializeBenefits } from "./features/redusers/benefitsSlice";
 import { useAppDispatch } from "./features/hooks/hooks";
 import { toLogin } from "./features/redusers/adminSlice";
-import { Container} from "./style/styledComponents";
+import { Container } from "./style/styledComponents";
 import SideBar from "./components/SideBar/SideBar";
-
-
-
+import Note from "./components/Note/Note";
 
 function App() {
 
@@ -33,6 +31,7 @@ function App() {
 
   return (
     <Container className="App">
+      <Note />
       <SideBar />
       <Routes>
         <Route path="/" element={<Nav />}>

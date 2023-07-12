@@ -10,9 +10,9 @@ export interface BenefitsValue {
     _id: string,
     stringOne: string;
     stringTwo: string;
-    number: number;
+    number: string;
 }
- export type BenefitNoId = Omit<BenefitsValue, '_id'>
+export type BenefitNoId = Omit<BenefitsValue, '_id'>
 
 const initialState = [] as BenefitsValue[]
 
@@ -67,7 +67,7 @@ export const createBenefit = (obj: BenefitNoId): ThunkAction<void, RootState, un
 export const removeBenefit = (id: string): ThunkAction<void, RootState, unknown, Action<unknown>> => {
     return async (dispatch) => {
         try {
-             await benefitsService.remove(id);
+            await benefitsService.remove(id);
             dispatch(deleteBenefit(id))
         } catch (err) {
             if (axios.isAxiosError(err) && err.response) {
@@ -80,8 +80,6 @@ export const removeBenefit = (id: string): ThunkAction<void, RootState, unknown,
         }
     }
 }
-
-
 
 
 export default BenefitsSlice.reducer

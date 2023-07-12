@@ -3,11 +3,10 @@ import Typography from "@mui/material/Typography";
 
 const About = () => {
 
-
     return (
         <div>
-            <Typography sx={{color: "white", p: 5}} variant="h3">About...</Typography>
-          
+            <Typography sx={{ color: "white", p: 5 }} variant="h3">About...</Typography>
+
         </div>
     )
 }

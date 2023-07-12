@@ -2,9 +2,6 @@ import { Box, Button, Container, Paper, TextField, Typography } from "@mui/mater
 import { useState } from "react";
 import { useAppDispatch } from "../../features/hooks/hooks";
 import { loginAdmin } from "../../features/redusers/adminSlice";
-import Note from "../Note/Note";
-
-
 
 const AdminForm = () => {
 
@@ -50,7 +47,6 @@ const AdminForm = () => {
                     </Box>
                 </Paper>
             </Box>
-            <Note />
         </Container >
     )
 }

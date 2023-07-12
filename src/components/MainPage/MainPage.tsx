@@ -1,13 +1,17 @@
 import Typography from "@mui/material/Typography";
 import { ButtonStart, FontNews, Page, PageElement, Wrapper } from "../../style/styledComponents";
 import Paper from "@mui/material/Paper";
-import { useAppSelector } from "../../features/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../features/hooks/hooks";
 import BenefitsItem from "../Benefits/BenefitsItem";
 import Box from "@mui/material/Box";
+import { showNote } from "../../features/redusers/noteSlice";
 
 
 const MainPage = () => {
+
     const benefits = useAppSelector(state => state.benefits)
+    const dispatch = useAppDispatch()
+
     return (
         <Page>
             <PageElement>
@@ -28,7 +32,7 @@ const MainPage = () => {
             </Wrapper>
             <PageElement>
                 <Box mt={3}>
-                    <ButtonStart>START</ButtonStart>
+                    <ButtonStart onClick={() => dispatch(showNote('Хм, вы нажали на кнопку, но ничего не происходит!'))}>START</ButtonStart>
                 </Box>
             </PageElement>
         </Page>

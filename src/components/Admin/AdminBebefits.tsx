@@ -9,7 +9,7 @@ interface PropsBenefits {
     value: BenefitsValue
 }
 
-const BenefitsItem = ({ value }: PropsBenefits) => {
+const AdminBenefits = ({ value }: PropsBenefits) => {
 
     const dispatch = useAppDispatch();
 
@@ -34,4 +34,4 @@ const BenefitsItem = ({ value }: PropsBenefits) => {
     )
 }
 
-export default BenefitsItem;
+export default AdminBenefits;
