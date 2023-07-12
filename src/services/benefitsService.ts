@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BenefitNoId } from "../features/redusers/benefitsSlice";
 
-const baseURL = 'http://localhost:3001/benefits';
+const baseURL = '/benefits';
 
 const getAll = async () => {
     const result = await axios.get(baseURL,  {

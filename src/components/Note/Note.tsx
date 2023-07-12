@@ -1,4 +1,4 @@
-import { Alert, AlertColor, Box } from "@mui/material"
+import { Alert, AlertColor } from "@mui/material"
 import { RootState } from "../../store";
 import { useAppDispatch, useAppSelector } from "../../features/hooks/hooks";
 import { hideNote } from "../../features/redusers/noteSlice";

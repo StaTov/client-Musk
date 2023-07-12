@@ -1,12 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-
-interface Note {
-    show: boolean,
-    type: 'string'
-    message: 'string'
-}
-
 const initialState = {
     show: false,
     message: '',

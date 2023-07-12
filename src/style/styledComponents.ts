@@ -3,7 +3,6 @@ import img from '../images/p1.jpg';
 import { Link } from 'react-router-dom';
 
 
-
 export const ContextMenu = styled.div<{ hidden?: boolean; }>`
 
 right: 0;
