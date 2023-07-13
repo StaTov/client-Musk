@@ -3,13 +3,20 @@ import img from '../images/p1.jpg';
 import { Link } from 'react-router-dom';
 
 
+export const HiddenDiv = styled.div`
+width: 100px;
+@media only screen and (max-width: 839px) {
+  display: none;
+}
+`
+
 export const SideMenu = styled.div<{ hidden?: boolean; }>`
 
 right: 0;
 border: 1px solid gray;
 position: absolute;
 background: url(${img});
-height: calc(100vh + 80px);
+height: 100vh;
 width: 200px;
 display:${props => props.hidden ? 'none' : 'flex'};
 flex-direction: column;
@@ -168,7 +175,7 @@ width: 100%;
 @media only screen and (max-width: 401px) {
   flex-direction: column;
   justify-content: space-around; 
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
    
 }
 
@@ -182,6 +189,8 @@ width: 85vw;
 margin: 0 auto;
 }
 `
+
+
 export const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -220,6 +229,31 @@ gap: 10px;
 }
 `
 
+export const AdminPageElement = styled.div`
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+@media only screen and (max-width: 640px) {
+  width: 100%;
+  height: auto;
+    
+}
+@media only screen and (min-width: 641px) and (max-width: 960px) {
+  width: 50%;
+  height: auto;
+  padding: 15px;
+  
+ }
+@media only screen and (min-width: 961px) {
+  
+  width: 33%;
+  height: auto;
+ }
+`
+
 export const PageElement = styled.div`
   display: flex;
   justify-content: center;
@@ -240,7 +274,7 @@ export const PageElement = styled.div`
   
  }
 @media only screen and (min-width: 961px) {
-   
+  margin-top: 20px; 
   width: 50%;
   height: auto;
   padding: 20px;

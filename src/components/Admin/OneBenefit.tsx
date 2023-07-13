@@ -10,7 +10,7 @@ interface OneBenefitProps {
 
 const OneBenefit = ({ stringOne, stringTwo, numberValue, mark }: OneBenefitProps) => {
     return (
-        <Box ml={3}>
+        <Box sx={{alignSelf: 'flex-start'}}>
             <Typography textAlign='center'>вид</Typography>
             <Box sx={{ mt: 1, borderRadius: 1.5, bgcolor: ' #273746 ',  p: 1 }}>
                 <BenefitsItem value={{ stringOne, stringTwo, number: String(numberValue + mark), _id: '0' }} />

@@ -29,7 +29,7 @@ const FormBenefits = (
         handleCreate }: FormBenefitsProps
 ) => {
     return (
-        <Box sx={{ pt: 4, display: 'flex', flexDirection: 'column', width: '360px', ml: 3 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: '200px', width: '360px' }}>
             <Paper sx={{ p: 3 }} component={'form'}>
                 <Box sx={{ height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <TextField

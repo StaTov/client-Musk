@@ -14,7 +14,7 @@ const BenefitsLayout = () => {
         return null
     }
     return (
-        <Box sx={{ display: "flex", flexDirection: 'column', alignItems: 'center', ml: 3 }}>
+        <Box sx={{ display: "flex", flexDirection: 'column', alignItems: 'center' }}>
             <Typography variant="body1" >макет</Typography>
             <Box sx={{ mt: 1, borderRadius: 1.5, bgcolor: ' #273746 ', p: 1 }}>
                 <AdminWrapper>
