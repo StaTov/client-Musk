@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import {  MenuItem, SideMenu } from '../../style/styledComponents';
-import { IconButton, Typography } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { indigo } from '@mui/material/colors';
 import { useAppDispatch, useAppSelector } from '../../features/hooks/hooks';
 import { tooggle } from '../../features/redusers/sidebarSlice';

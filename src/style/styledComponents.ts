@@ -116,7 +116,7 @@ width: 350px;
 left: 0;
 right: 0;
 margin: 0 auto;
-bottom: 5%;
+bottom: 15%;
 animation-duration: 0.4s;
 animation-name: anim;
 
@@ -125,7 +125,7 @@ animation-name: anim;
     bottom: 0%;;
   }
   to {
-    bottom: 5%;
+    bottom: 15%;
   }
 ;
 `
@@ -133,7 +133,6 @@ animation-name: anim;
 
 export const Container = styled.div`
 background: url(${img});
-
 position: relative;
 background-attachment: fixed;
 background-size: cover;
@@ -161,7 +160,6 @@ justify-content: space-between;
 
 
 export const Page = styled.div`
-border: 1px solid red;
 font-family: "Roboto";
 display: flex;
 flex-wrap: wrap;
@@ -175,17 +173,13 @@ width: 100%;
 }
 
 @media only screen and (min-width: 401px) and (max-width: 961px) {
-  
-  max-width: 800px;
-  margin: 0 auto;
-  
-  }
+max-width: 800px;
+margin: 0 auto;
+}
 
 @media only screen and (min-width: 961px) {
-  width: 85vw;
-  margin: 0 auto;
-  
- 
+width: 85vw;
+margin: 0 auto;
 }
 `
 export const Wrapper = styled.div`
@@ -227,8 +221,6 @@ gap: 10px;
 `
 
 export const PageElement = styled.div`
-
- border: 1px solid green;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
