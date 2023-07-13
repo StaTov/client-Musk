@@ -1,4 +1,4 @@
-import { Grid, Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import BenefitsItem from "../Benefits/BenefitsItem";
 
 interface OneBenefitProps {
@@ -10,11 +10,12 @@ interface OneBenefitProps {
 
 const OneBenefit = ({ stringOne, stringTwo, numberValue, mark }: OneBenefitProps) => {
     return (
-        <Grid sx={{ display: 'flex', justifyContent: 'center' }} mt={3} item xs={3}>
-            <Box sx={{ mt: 4, borderRadius: 1.5, bgcolor: ' #273746 ', width: '123px', height: '123px', p: 1 }}>
+        <Box ml={3}>
+            <Typography textAlign='center'>вид</Typography>
+            <Box sx={{ mt: 1, borderRadius: 1.5, bgcolor: ' #273746 ',  p: 1 }}>
                 <BenefitsItem value={{ stringOne, stringTwo, number: String(numberValue + mark), _id: '0' }} />
             </Box>
-        </Grid>
+        </Box>
     )
 }
 

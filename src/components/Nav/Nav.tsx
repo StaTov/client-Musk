@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { BurgerIcon, ImgBox, NavBar, NavMenu, NavbarLink } from "../../style/styledComponents";
 import logo from "../../images/logo.png";
 import { IconButton } from "@mui/material";
@@ -10,12 +10,13 @@ import { tooggle } from "../../features/redusers/sidebarSlice";
 const Nav = () => {
     const dispatch = useAppDispatch();
     const toggle = useAppSelector(state => state.sideBar)
+    const navigate = useNavigate();
 
     return (
         <div>
             <NavBar>
                 <ImgBox>
-                    <img width="200px" src={logo} alt="" />
+                    <img onClick={() => navigate('/')} width="200px" src={logo} alt="" />
                 </ImgBox>
                 <NavMenu>
                     <NavbarLink to={"/"}>Главная</NavbarLink>

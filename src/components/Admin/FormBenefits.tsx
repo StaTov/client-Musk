@@ -1,4 +1,4 @@
-import { Grid, Box, Paper, TextField, Button } from "@mui/material";
+import { Box, Paper, TextField, Button } from "@mui/material";
 import SelectMark from "./SelectMark";
 
 interface FormBenefitsProps {
@@ -29,40 +29,39 @@ const FormBenefits = (
         handleCreate }: FormBenefitsProps
 ) => {
     return (
-        <Grid item xs={6}>
-            <Box sx={{ mt: 7, display: 'flex', flexDirection: 'column', width: '360px' }}>
-                <Paper sx={{ p: 3 }} component={'form'}>
-                    <Box sx={{ height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                        <TextField
-                            variant="standard"
-                            required
-                            label="верхняя строчка"
-                            minRows={3}
-                            value={stringOne}
-                            onChange={(e) => setStringOne(e.target.value)}
-                        />
-                        <TextField
-                            sx={{ mt: 1, ml: 0.8, maxWidth: '120px' }}
-                            variant="standard"
-                            required
-                            type='number'
-                            value={numberValue}
-                            onChange={(e) => setNumberValue(Number(e.target.value))}
-                        />
-                        <SelectMark mark={mark} setMark={setMark} />
-                        <TextField
-                            variant="standard"
-                            required
-                            label="нижняя строчка"
-                            minRows={3}
-                            value={stringTwo}
-                            onChange={(e) => setStringTwo(e.target.value)}
-                        />
-                        <Button onClick={handleCreate}>Создать</Button>
-                    </Box>
-                </Paper>
-            </Box>
-        </Grid>
+        <Box sx={{ pt: 4, display: 'flex', flexDirection: 'column', width: '360px', ml: 3 }}>
+            <Paper sx={{ p: 3 }} component={'form'}>
+                <Box sx={{ height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <TextField
+                        variant="standard"
+                        required
+                        label="верхняя строчка"
+                        minRows={3}
+                        value={stringOne}
+                        onChange={(e) => setStringOne(e.target.value)}
+                    />
+                    <TextField
+                        sx={{ mt: 1, ml: 0.8, maxWidth: '120px' }}
+                        variant="standard"
+                        required
+                        type='number'
+                        value={numberValue}
+                        onChange={(e) => setNumberValue(Number(e.target.value))}
+                    />
+                    <SelectMark mark={mark} setMark={setMark} />
+                    <TextField
+                        variant="standard"
+                        required
+                        label="нижняя строчка"
+                        minRows={3}
+                        value={stringTwo}
+                        onChange={(e) => setStringTwo(e.target.value)}
+                    />
+                    <Button sx={{mt: 3}} variant="contained" onClick={handleCreate}>Создать</Button>
+                </Box>
+            </Paper>
+        </Box>
+
     )
 }
 

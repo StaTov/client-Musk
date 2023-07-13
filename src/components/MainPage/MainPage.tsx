@@ -27,9 +27,11 @@ const MainPage = () => {
                     </Box>
                 </Paper>
             </PageElement>
-            <Wrapper>
-                {benefits.map(b => <BenefitsItem key={b._id} value={b} />)}
-            </Wrapper>
+            <PageElement>
+                <Wrapper>
+                    {benefits.map(b => <BenefitsItem key={b._id} value={b} />)}
+                </Wrapper>
+            </PageElement>
             <PageElement>
                 <Box mt={3}>
                     <ButtonStart onClick={() => dispatch(showNote('Хм, вы нажали на кнопку, но ничего не происходит!'))}>START</ButtonStart>

@@ -3,17 +3,17 @@ import img from '../images/p1.jpg';
 import { Link } from 'react-router-dom';
 
 
-export const ContextMenu = styled.div<{ hidden?: boolean; }>`
+export const SideMenu = styled.div<{ hidden?: boolean; }>`
 
 right: 0;
 border: 1px solid gray;
 position: absolute;
 background: url(${img});
-height: 100vh;
+height: calc(100vh + 80px);
 width: 200px;
 display:${props => props.hidden ? 'none' : 'flex'};
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
 animation-duration: 0.4s;
 animation-name: anim;
 
@@ -39,28 +39,39 @@ margin-right: 20px;
 
 export const ImgBox = styled.div`
 
+cursor: pointer;
+background: rgba(250, 250, 250, 0); 
+transition: background 0.3s;
+border-radius: 5px;
+
+
+&:hover {
+background: rgba(250, 250, 250, .03);
+}
+
 @media (min-width: 768px) { 
-  padding-right: 0px;
-  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 @media (min-width: 972px) { 
-  padding-right: 40px;
-  padding-left: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 `
 export const MenuItem = styled(Link)`
-
+width: 100%;
+height: 60px;
 color: white;
-display: flex;
-align-items: center;
-padding: 0px 12px;
-margin: 15px;
+text-align: center;
 text-decoration: none;
+padding-top: 18px;
 
 
 &:hover{
-opacity: 0.3;
+background: rgba(250, 250, 250, .1);
+
 },
+
 &:focus{
   color: gray;
 };
@@ -71,18 +82,18 @@ opacity: 0.3;
 
 export const NavbarLink = styled(Link)`
 
- color: white;
- font-size: middle;
- font-family: Arial, Helvetica, sans-serif;
- text-decoration: none;
- display: flex;
- align-items: center;
- padding: 0px 12px 0px 12px;
- 
+color: white;
+font-size: middle;
+font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+display: flex;
+align-items: center;
+padding: 0px 12px 0px 12px;
+
 
 &:hover{
     opacity: 0.3;
-},
+    },
 &:focus{
     color: gray;
 };
@@ -121,7 +132,8 @@ animation-name: anim;
 
 
 export const Container = styled.div`
-background: url(${img})  ;
+background: url(${img});
+
 position: relative;
 background-attachment: fixed;
 background-size: cover;
@@ -130,13 +142,17 @@ overflow: hidden;
 p: 0;
 m: 0;
 
+@media only screen and (min-width: 961px) {
+background-size: 130% auto;
+}
+
 `
 export const NavBar = styled.nav`
 width: 100%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-height: 60px;
+height: 80px;
 background: rgba(250, 250, 250, .06);
 border-bottom: 0.1px solid gray;
 @media(max-width: 890px) {
@@ -145,15 +161,30 @@ justify-content: space-between;
 
 
 export const Page = styled.div`
+border: 1px solid red;
 font-family: "Roboto";
 display: flex;
 flex-wrap: wrap;
 width: 100%;
 
+@media only screen and (max-width: 401px) {
+  flex-direction: column;
+  justify-content: space-around; 
+  height: calc(100vh - 80px);
+   
+}
+
+@media only screen and (min-width: 401px) and (max-width: 961px) {
+  
+  max-width: 800px;
+  margin: 0 auto;
+  
+  }
 
 @media only screen and (min-width: 961px) {
-  width: 800px;
+  width: 85vw;
   margin: 0 auto;
+  
  
 }
 `
@@ -172,8 +203,8 @@ grid-template-rows: 1fr 1fr;
  gap: 1vw;
  }
 @media only screen and (min-width: 961px) {
+  margin: 0 auto;
 gap: 10px;
-margin-top: 33px;
 }
 `
 export const AdminWrapper = styled.div`
@@ -197,7 +228,7 @@ gap: 10px;
 
 export const PageElement = styled.div`
 
-
+ border: 1px solid green;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -217,10 +248,10 @@ export const PageElement = styled.div`
   
  }
 @media only screen and (min-width: 961px) {
-   margin-top: 20px;
-  width: 560px;
+   
+  width: 50%;
   height: auto;
-  padding: 15px;
+  padding: 20px;
   align-items: start;
   justify-content: flex-start;
 }
@@ -237,8 +268,8 @@ color: white;
   line-height: 1.25rem;
 }
 @media only screen and (min-width: 961px) {
-  font-size: 15px;
-  line-height: 1.25rem;
+  font-size: 18px;
+  line-height: 1.6rem;
 }
 
 `
@@ -253,7 +284,7 @@ color: white;
   font-size: 10px;
 }
 @media only screen and (min-width: 961px) {
-  font-size: 10px;
+  font-size: 12px;
 }
 `
 export const FontMax = styled.div`
@@ -274,10 +305,10 @@ color: white;
 }
 }
 @media only screen and (min-width: 961px) {
-  font-size: 34px;
+  font-size: 50px;
   transition: font-size 0.2s;
   &:hover {
-        font-size: 40px;
+        font-size: 55px;
 }
 }
 `
@@ -290,18 +321,22 @@ margin: 1px;
 width: 105px;
 height: 105px;
 font-size: middle;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:  rgba(250, 250, 250, 0.06);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background:  rgba(250, 250, 250, 0.06);
   
 
-  &:hover {
+&:hover {
 cursor: pointer;
 background: rgba(250, 250, 250, .3)
 }
- 
+
+@media only screen and (min-width: 960px) {
+  width: 125px;
+  height: 125px;
+  }
 
 `
 export const BenefitsAdmin = styled.div`
@@ -312,17 +347,22 @@ margin: 1px;
 width: 105px;
 height: 105px;
 font-size: middle;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:  rgba(250, 250, 250, 0.06);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background:  rgba(250, 250, 250, 0.06);
   
   &:hover {
 cursor: pointer;
 background: rgba(250, 250, 250, .3)
 }
+
+@media only screen and (min-width: 960px) {
+  width: 125px;
+  height: 125px;
  
+}
 
 `
 export const ButtonStart = styled.button`

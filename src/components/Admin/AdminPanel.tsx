@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Paper } from "@mui/material";
+import { Box, Container, Paper } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../features/hooks/hooks";
 import { RootState } from "../../store";
 import { useState } from "react";
@@ -37,7 +37,7 @@ const AdminPanel = () => {
             <Box m={3}  >
                 <Paper elevation={3} sx={{ bgcolor: ' #ebedef ', p: 5 }}>
                     <HeaderAd hadleLogout={hadleLogout} />
-                    <Grid container spacing={2}>
+                    <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
                         <BenefitsLayout />
                         <OneBenefit
                             stringOne={stringOne}
@@ -56,7 +56,7 @@ const AdminPanel = () => {
                             setStringTwo={setStringTwo}
                             handleCreate={handleCreate}
                         />
-                    </Grid>
+                    </Box>
                 </Paper>
             </Box>
         </Container >

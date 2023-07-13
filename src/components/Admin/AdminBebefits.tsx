@@ -22,7 +22,7 @@ const AdminBenefits = ({ value }: PropsBenefits) => {
 
     return (
         <BenefitsAdmin>
-            <Box sx={{ top: '80px', left: '80px', position: 'absolute' }}>
+            <Box sx={{ bottom: -4, right: -4, position: 'absolute' }}>
                 <IconButton onClick={handleRemove} size="small" >
                     <DeleteIcon fontSize="small" />
                 </IconButton>
