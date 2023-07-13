@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import benefitsService from '../../services/benefitsService';
 import { RootState } from '../../store';
 import axios from 'axios';
-import { showError } from './noteSlice';
+import { showError, showNote } from './noteSlice';
 
 
 export interface BenefitsValue {
@@ -52,6 +52,7 @@ export const createBenefit = (obj: BenefitNoId): ThunkAction<void, RootState, un
         try {
             const newBenefit = await benefitsService.create(obj);
             dispatch(appendBenefit(newBenefit))
+            dispatch(showNote('успешно создано'))
         } catch (err) {
             if (axios.isAxiosError(err) && err.response) {
                 console.error(err.response?.data.error);

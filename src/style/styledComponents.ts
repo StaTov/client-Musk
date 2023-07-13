@@ -118,6 +118,7 @@ display: flex;
 
 `
 export const NoteBox = styled.div`
+z-index: 99999;
 position: absolute; 
 width: 350px;
 left: 0;

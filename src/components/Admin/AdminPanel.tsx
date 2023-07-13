@@ -5,7 +5,7 @@ import { useState } from "react";
 import { createBenefit } from "../../features/redusers/benefitsSlice";
 import { logoutAdmin } from "../../features/redusers/adminSlice";
 import { showError } from "../../features/redusers/noteSlice";
-import HeaderAd from "./HeaderAD";
+import HeaderAdmin from "./HeaderAdmin";
 import BenefitsLayout from "./BenefitsLayout";
 import OneBenefit from "./OneBenefit";
 import FormBenefits from "./FormBenefits";
@@ -37,7 +37,7 @@ const AdminPanel = () => {
         <Container>
             <Box m={3}  >
                 <Paper elevation={3} sx={{ bgcolor: ' #ebedef ', p: 3 }}>
-                    <HeaderAd hadleLogout={hadleLogout} />
+                    <HeaderAdmin hadleLogout={hadleLogout} />
                     <Divider sx={{ mb: 3 }} />
                     <Page>
                         <AdminPageElement>
