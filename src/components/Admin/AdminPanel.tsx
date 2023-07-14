@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Paper } from "@mui/material";
+import { Box, Divider, Paper } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../features/hooks/hooks";
 import { RootState } from "../../store";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import HeaderAdmin from "./HeaderAdmin";
 import BenefitsLayout from "./BenefitsLayout";
 import OneBenefit from "./OneBenefit";
 import FormBenefits from "./FormBenefits";
-import { AdminPageElement, Page } from "../../style/styledComponents";
+import { AdminPage, AdminPageElement } from "../../style/styledComponents";
 
 
 const AdminPanel = () => {
@@ -34,23 +34,12 @@ const AdminPanel = () => {
     }
 
     return (
-        <Container>
-            <Box m={3}  >
-                <Paper elevation={3} sx={{ bgcolor: ' #ebedef ', p: 3 }}>
-                    <HeaderAdmin hadleLogout={hadleLogout} />
-                    <Divider sx={{ mb: 3 }} />
-                    <Page>
-                        <AdminPageElement>
-                            <BenefitsLayout />
-                        </AdminPageElement>
-                        <AdminPageElement>
-                            <OneBenefit
-                                stringOne={stringOne}
-                                stringTwo={stringTwo}
-                                numberValue={numberValue}
-                                mark={mark}
-                            />
-                        </AdminPageElement>
+        <Box m={3}>
+            <Paper elevation={3} sx={{ bgcolor: ' #ebedef ', p: 3 }}>
+                <HeaderAdmin hadleLogout={hadleLogout} />
+                <Divider sx={{ mb: 3 }} />
+                <Paper sx={{pb: 3}}>
+                    <AdminPage>
                         <AdminPageElement>
                             <FormBenefits
                                 stringOne={stringOne}
@@ -64,10 +53,22 @@ const AdminPanel = () => {
                                 handleCreate={handleCreate}
                             />
                         </AdminPageElement>
-                    </Page>
+                        <AdminPageElement>
+                            <OneBenefit
+                                stringOne={stringOne}
+                                stringTwo={stringTwo}
+                                numberValue={numberValue}
+                                mark={mark}
+                            />
+                        </AdminPageElement>
+                        <AdminPageElement>
+                            <BenefitsLayout />
+                        </AdminPageElement>
+                    </AdminPage>
                 </Paper>
-            </Box>
-        </Container >
+            </Paper>
+        </Box>
+
     )
 }
 

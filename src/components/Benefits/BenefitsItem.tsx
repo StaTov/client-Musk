@@ -1,5 +1,5 @@
 import { BenefitsValue } from "../../features/redusers/benefitsSlice"
-import { BenefitsContainer, FontMax, FontMin } from "../../style/styledComponents"
+import { AdminBenefitsContainer, AdminFontMax, AdminFontMin } from "../../style/styledComponents"
 
 interface PropsBenefits {
     value: BenefitsValue
@@ -7,11 +7,11 @@ interface PropsBenefits {
 
 const BenefitsItem = ({ value }: PropsBenefits) => {
     return (
-        <BenefitsContainer>
-            <FontMin>{value.stringOne}</FontMin>
-            <FontMax>{value.number}</FontMax>
-            <FontMin>{value.stringTwo}</FontMin>
-        </BenefitsContainer >
+        <AdminBenefitsContainer>
+            <AdminFontMin>{value.stringOne}</AdminFontMin>
+            <AdminFontMax>{value.number}</AdminFontMax>
+            <AdminFontMin>{value.stringTwo}</AdminFontMin>
+        </AdminBenefitsContainer >
     )
 }
 

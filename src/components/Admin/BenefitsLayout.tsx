@@ -15,9 +15,9 @@ const BenefitsLayout = () => {
     }
     return (
         <Box sx={{ display: "flex", flexDirection: 'column', alignItems: 'center' }}>
-            <Typography variant="body1" >макет</Typography>
-            <Box sx={{ mt: 1, borderRadius: 1.5, bgcolor: ' #273746 ', p: 1 }}>
-                <AdminWrapper>
+            <Typography >макет</Typography>
+            <Box sx={{mt: 1,  borderRadius: 1.5, bgcolor: ' #273746 ', p: 1, boxShadow: '0px 5px 10px 2px rgba(0, 0, 0, 0.31)' }}>
+                <AdminWrapper >
                     {benefits.map(b => <AdminBenefits key={b._id} value={b} />)}
                 </AdminWrapper>
             </Box>

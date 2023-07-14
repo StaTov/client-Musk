@@ -11,7 +11,6 @@ width: 100px;
 `
 
 export const SideMenu = styled.div<{ hidden?: boolean; }>`
-
 right: 0;
 border: 1px solid gray;
 position: absolute;
@@ -115,8 +114,8 @@ padding: 0px 12px 0px 12px;
 export const NavMenu = styled.nav`
 width: 100%;
 display: flex;
-
 `
+
 export const NoteBox = styled.div`
 z-index: 99999;
 position: absolute; 
@@ -159,7 +158,7 @@ width: 100%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-height: 80px;
+height: 60px;
 background: rgba(250, 250, 250, .06);
 border-bottom: 0.1px solid gray;
 @media(max-width: 890px) {
@@ -176,8 +175,7 @@ width: 100%;
 @media only screen and (max-width: 401px) {
   flex-direction: column;
   justify-content: space-around; 
-  min-height: calc(100vh - 80px);
-   
+  min-height: calc(100vh - 60px);
 }
 
 @media only screen and (min-width: 401px) and (max-width: 961px) {
@@ -190,7 +188,19 @@ width: 85vw;
 margin: 0 auto;
 }
 `
+export const AdminPage = styled.div`
+font-family: "Roboto";
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+margin: 0 auto;
+justify-content: space-around;
+align-items: flex-start;
 
+@media only screen and (min-width: 961px) {
+ width: 870px
+ }
+`
 
 export const Wrapper = styled.div`
 display: grid;
@@ -201,7 +211,7 @@ grid-template-rows: 1fr 1fr;
    gap: 1vw;
 }
 
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 401px) and (max-width: 961px) {
  width: auto;
  margin: 0 auto;
  gap: 1vw;
@@ -215,12 +225,14 @@ export const AdminWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr;
-@media only screen and (max-width: 400px) {
+box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+
+@media only screen and (max-width: 401px) {
    margin: 0 auto;
    gap: 1vw;
 }
 
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 401px) and (max-width: 961px) {
  width: auto;
  margin: 0 auto;
  gap: 1vw;
@@ -237,20 +249,21 @@ export const AdminPageElement = styled.div`
   flex-wrap: wrap;
   align-items: center;
 
-@media only screen and (max-width: 640px) {
-  width: 100%;
+@media only screen and (max-width: 641px) {
+  width: auto;
   height: auto;
+  padding: 15px;
     
 }
-@media only screen and (min-width: 641px) and (max-width: 960px) {
-  width: 50%;
+@media only screen and (min-width: 641px) and (max-width: 961px) {
+  width: auto;
   height: auto;
   padding: 15px;
   
  }
 @media only screen and (min-width: 961px) {
-  
-  width: 33%;
+  padding: 15px;
+  width: auto;
   height: auto;
  }
 `
@@ -261,13 +274,13 @@ export const PageElement = styled.div`
   flex-wrap: wrap;
   align-items: center;
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 401px) {
   width: 100%;
   height: auto;
   padding: 10px;
   
 }
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 401px) and (max-width: 961px) {
   margin-top: 20px;
   width: 100%;
   height: auto;
@@ -298,16 +311,23 @@ color: white;
   font-size: 18px;
   line-height: 1.6rem;
 }
+`
+export const AdminFontMax = styled.div`
+color: white;
+font-size: 30px;
+`
 
+export const AdminFontMin = styled.div`
+font-size: 10px;
+color: white;
 `
 
 export const FontMin = styled.div`
 color: white;
 @media only screen and (max-width: 400px) {
   font-size: 10px;
-
 }
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 400px) and (max-width: 961px) {
   font-size: 10px;
 }
 @media only screen and (min-width: 961px) {
@@ -324,7 +344,7 @@ color: white;
     font-size: 40px;
 }
 }
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 400px) and (max-width: 961px) {
   font-size: 34px;
   transition: font-size 0.2s;
   &:hover {
@@ -339,7 +359,25 @@ color: white;
 }
 }
 `
+export const AdminBenefitsContainer = styled.div`
+border-radius: 5px;
+color: white;
+margin: 1px;
+width: 105px;
+height: 105px;
+font-size: middle;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background:  rgba(250, 250, 250, 0.06);
+  
 
+&:hover {
+cursor: pointer;
+background: rgba(250, 250, 250, .3)
+}
+` 
 
 export const BenefitsContainer = styled.div`
 border-radius: 5px;
@@ -360,7 +398,7 @@ cursor: pointer;
 background: rgba(250, 250, 250, .3)
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 961px) {
   width: 125px;
   height: 125px;
   }
@@ -383,12 +421,6 @@ background:  rgba(250, 250, 250, 0.06);
   &:hover {
 cursor: pointer;
 background: rgba(250, 250, 250, .3)
-}
-
-@media only screen and (min-width: 960px) {
-  width: 125px;
-  height: 125px;
- 
 }
 
 `

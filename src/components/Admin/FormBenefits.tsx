@@ -1,4 +1,4 @@
-import { Box, Paper, TextField, Button } from "@mui/material";
+import { Box, Paper, TextField, Button, Typography } from "@mui/material";
 import SelectMark from "./SelectMark";
 
 interface FormBenefitsProps {
@@ -29,8 +29,9 @@ const FormBenefits = (
         handleCreate }: FormBenefitsProps
 ) => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: '200px', width: '360px' }}>
-            <Paper sx={{ p: 3 }} component={'form'}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: '250px' }}>
+          <Typography sx={{mb: 1, textAlign: 'center'}} >форма</Typography>
+            <Paper elevation={5} sx={{ p: 3 }} component={'form'}>
                 <Box sx={{ height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <TextField
                         variant="standard"
@@ -57,7 +58,10 @@ const FormBenefits = (
                         value={stringTwo}
                         onChange={(e) => setStringTwo(e.target.value)}
                     />
+                    <Box textAlign='center'>
+
                     <Button sx={{mt: 3}} variant="contained" onClick={handleCreate}>Создать</Button>
+                    </Box>
                 </Box>
             </Paper>
         </Box>

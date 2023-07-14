@@ -16,11 +16,11 @@ const Nav = () => {
         <div>
             <NavBar>
                 <ImgBox>
-                    <img onClick={() => navigate('/')} width="200px" src={logo} alt="" />
+                    <img onClick={() => navigate('/')}  width="200px" src={logo} alt="logo" />
                 </ImgBox>
                 <NavMenu>
                     <NavbarLink to={"/"}>Главная</NavbarLink>
-                    <NavbarLink to={"/tech"}>Технология</NavbarLink >
+                    <NavbarLink to={"/tech"}>Технологии</NavbarLink >
                     <NavbarLink to={"/flights"}>График полетов</NavbarLink >
                     <NavbarLink to={"/guarantees"}>Гарантии</NavbarLink >
                     <NavbarLink to={"/about "}>О компании</NavbarLink >

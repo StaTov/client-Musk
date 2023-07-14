@@ -20,7 +20,7 @@ const HeaderAdmin = ({ hadleLogout }: PropsHeaderAd) => {
                     Редактор
                 </Typography>
             </Box>
-            <Box sx={{ display: 'inline' }}>
+            <Box sx={{ display: 'inline', border: 'solid;', borderColor: 'gray', borderWidth: '1px', borderRadius: '4px'  }}>
                 <IconButton title='на сайт' onClick={() => navigate('/')}>
                     <HomeIcon sx={{ color: lightBlue[900] }} />
                 </IconButton>
